@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# 系统必要设置为ON
+devil binexec on
+
 # 用户目录
 USER_HOME="/usr/home/$(whoami)"
 CONFIG_FILE="$USER_HOME/webdav/gowebdav.yaml"
@@ -8,6 +11,9 @@ BASH_PROFILE="$USER_HOME/.bash_profile"
 chmod +x ./make_info.sh
 echo "生成 info.html 文件..."
 ./make_info.sh
+
+cp set_env_vars.sh /usr/home/$(whoami)/webdav/set_env_vars.sh
+chmod +x /usr/home/$(whoami)/webdav/set_env_vars.sh
 
 # 切换到用户目录
 cd "$USER_HOME"
@@ -160,9 +166,6 @@ PM2_PATH=$(which pm2 | tr -d '\n')
 crontab -l | grep -v '@reboot.*pm2 resurrect' | crontab -
 (crontab -l 2>/dev/null; echo "@reboot $PM2_PATH resurrect") | crontab -
 
-# 系统必要设置为ON
-devil binexec on
-
 # 提示安装完成
 echo "WebDAV-go 安装完成并已启动，当前服务运行在端口: $WEBDAV_PORT"
 
@@ -175,6 +178,4 @@ echo "安装全部完成 Happy Webdav. 请从【 https://$(whoami).serv00.net/in
 echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
 
 cd
-cp /usr/home/$(whoami)/serv00-webdav/set_env_vars.sh /usr/home/$(whoami)/webdav/set_env_vars.sh
-chmod +x /usr/home/$(whoami)/webdav/set_env_vars.sh
 (crontab -l 2>/dev/null; echo "@reboot /usr/home/$(whoami)/webdav/set_env_vars.sh") | crontab -
