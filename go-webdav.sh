@@ -58,7 +58,7 @@ read -r WEBDAV_USER
 WEBDAV_USER=${WEBDAV_USER:-user}  # 如果未输入值，默认使用 'user'
 echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
 echo "请输入 WebDAV 的密码 (默认: password):"
-read -sr WEBDAV_PASSWORD
+read -r WEBDAV_PASSWORD
 WEBDAV_PASSWORD=${WEBDAV_PASSWORD:-password}  # 如果未输入值，默认使用 'password'
 
 # 生成 go-webdav 配置文件
