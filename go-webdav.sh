@@ -65,8 +65,8 @@ WEBDAV_PASSWORD=${WEBDAV_PASSWORD:-password}  # 如果未输入值，默认使�
 cat <<EOF > "$CONFIG_FILE"
 address: 0.0.0.0
 port: $WEBDAV_PORT
-prefix: /webdav
-debug: false
+prefix: /
+debug: true
 noSniff: false
 directory: $USER_HOME/webdav
 permissions: RC
@@ -84,7 +84,7 @@ users:
     password: basic
     permissions: CRUD
     rules:
-      - path: /some/file
+      - path: $USER_HOME/webdav
         permissions: none
       - path: $USER_HOME/webdav/public/
         permissions: CRUD

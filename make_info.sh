@@ -49,7 +49,7 @@ cat <<EOF > "$INFO_FILE"
     <div class="container">
         <h1>WebDAV 已成功安装</h1>
         <p>恭喜！WebDAV-go 已成功安装并运行在 <strong>$(whoami).serv00.net</strong> 上。当前的 WebDAV 服务正在 <strong>运行</strong> 。</p>
-        <h2> <a href="/dav" target="_blank">打 开 网 盘</a></h2>
+        <h2> <a href="/" target="_blank">打 开 网 盘</a></h2>
         <h2>主要功能</h2>
         <ul>
             <li>一键安装 WebDAV 文件共享服务</li>
@@ -78,7 +78,7 @@ cat <<EOF > "$INFO_FILE"
 
         <p>4. 相关路径</p>
         <p>网盘具体路径如下，更多详情请查看<a href="https://github.com/aigem/serv00-webdav" target="_blank">WebDAV-go GitHub 仓库</a></p>
-        <pre><code>/usr/home/用户名/webdav/dav/</code></pre>
+        <pre><code>/usr/home/用户名/webdav//</code></pre>
     </div>
 </body>
 </html>
