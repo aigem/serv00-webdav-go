@@ -32,9 +32,10 @@
 
 ```bash
 git clone https://github.com/aigem/serv00-webdav-go.git
-cd serv00-webdav-go && bash go-webdav.sh
+cd serv00-webdav-go && chmod +x install_wsgidav.sh&& ./go-webdav.sh
 ```
 
+./install_wsgidav.sh
 ### 2. 使用 `go-webdav.sh` 脚本安装 WebDAV-go
 
 运行脚本开始安装和配置 WebDAV-go 服务：
