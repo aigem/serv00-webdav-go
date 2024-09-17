@@ -5,7 +5,7 @@ devil binexec on
 
 # 用户目录
 USER_HOME="/usr/home/$(whoami)"
-CONFIG_FILE="$USER_HOME/webdav/gowebdav.yaml"
+CONFIG_FILE="$USER_HOME/gowebdav.yaml"
 BASH_PROFILE="$USER_HOME/.bash_profile"
 
 chmod +x ./make_info.sh

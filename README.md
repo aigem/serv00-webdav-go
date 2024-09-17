@@ -2,13 +2,9 @@
 【免费webdav】在 serv00上部署了 WebDAV(go) 服务，并通过 PM2 保证其持久运行
 ---
 
-# WebDAV-go 安装指南
-
-这是一个基于 FreeBSD 的 WebDAV-go 自动安装和配置脚本项目，使用 [PM2](https://pm2.keymetrics.io/) 来管理 WebDAV 服务，确保系统重启后自动恢复服务。
-
 ## 项目简介
 
-此项目旨在简化 WebDAV-go 的安装流程，并通过 PM2 来托管 WebDAV 服务。它允许您快速设置一个运行在 FreeBSD 上的 WebDAV 文件共享服务。
+此项目旨在简化 WebDAV 的安装流程，并通过 PM2 来托管 WebDAV 服务。它允许您一键获得 WebDAV 文件共享服务【免费】。
 
 ## 特性
 
@@ -19,10 +15,7 @@
 
 ## 系统要求
 
-- FreeBSD 系统
-- FreeBSD 用户权限，无需 root 权限
-- 需要安装 [Go](https://golang.org/) 语言环境
-- 安装 [npm](https://www.npmjs.com/) 用于安装 PM2
+- [Serv00免费主机](https://www.serv00.com/)
 
 ## 安装步骤
 
@@ -32,7 +25,8 @@
 
 ```bash
 git clone https://github.com/aigem/serv00-webdav-go.git
-cd serv00-webdav-go && chmod +x go-webdav.sh && sh go-webdav.sh
+cd serv00-webdav-go && chmod +x go-webdav.sh
+./go-webdav.sh
 ```
 
 ./install_wsgidav.sh
@@ -97,28 +91,10 @@ pm2 list
 脚本会生成一个默认的 WebDAV 配置文件 `gowebdav.yaml`，它存放在以下路径：
 
 ```bash
-/usr/home/你的用户名/webdav/gowebdav.yaml
+/usr/home/你的用户名/gowebdav.yaml
 ```
 
 你可以手动编辑此文件来更改 WebDAV 的配置，例如修改访问目录、权限、日志格式等。
 
-### 配置示例
 
-```yaml
-address: 0.0.0.0
-port: 8080
-prefix: /
-directory: /usr/home/你的用户名/webdav
-permissions: R
-users:
-  - username: user
-    password: password
-```
 
-## 参考资源
-
-- [Go](https://golang.org/)
-- [PM2](https://pm2.keymetrics.io/)
-- [WebDAV-go 项目](https://github.com/hacdias/webdav)
-
----
