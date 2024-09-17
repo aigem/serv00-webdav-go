@@ -32,7 +32,7 @@
 
 ```bash
 git clone https://github.com/aigem/serv00-webdav-go.git
-cd serv00-webdav-go && chmod +x install_wsgidav.sh&& ./go-webdav.sh
+cd serv00-webdav-go && chmod +x go-webdav.sh && ./go-webdav.sh
 ```
 
 ./install_wsgidav.sh
