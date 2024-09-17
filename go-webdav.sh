@@ -5,6 +5,7 @@ USER_HOME="/usr/home/$(whoami)"
 CONFIG_FILE="$USER_HOME/webdav/gowebdav.yaml"
 BASH_PROFILE="$USER_HOME/.bash_profile"
 
+chmod +x ./make_info.sh
 echo "生成 info.html 文件..."
 ./make_info.sh
 
@@ -13,6 +14,7 @@ cd "$USER_HOME"
 
 # 创建 WebDAV 等目录
 mkdir -p "$USER_HOME/webdav"
+mkdir -p "$USER_HOME/webdav/public"
 
 # 提示用户输入 WebDAV-go 的端口号或开通新端口号
 echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
@@ -57,31 +59,17 @@ WEBDAV_PASSWORD=${WEBDAV_PASSWORD:-password}  # 如果未输入值，默认使�
 cat <<EOF > "$CONFIG_FILE"
 address: 0.0.0.0
 port: $WEBDAV_PORT
-prefix: /
+prefix: /webdav
 debug: false
 noSniff: false
 directory: $USER_HOME/webdav
-permissions: R
-rules: []
+permissions: RC
 
 log:
   format: console
   colors: true
   outputs:
     - stderr
-
-cors:
-  enabled: true
-  credentials: true
-  allowed_headers:
-    - Depth
-  allowed_hosts:
-    - "*"
-  allowed_methods:
-    - GET
-  exposed_headers:
-    - Content-Length
-    - Content-Range
 
 users:
   - username: $WEBDAV_USER
@@ -94,8 +82,6 @@ users:
         permissions: none
       - path: $USER_HOME/webdav/public/
         permissions: CRUD
-      - regex: "^.+.js$"
-        permissions: RU
 EOF
 
 # 网站指向部分
