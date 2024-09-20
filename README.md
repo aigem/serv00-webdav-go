@@ -5,9 +5,7 @@
 
 此项目旨在简化 WebDAV 的安装流程，并通过 PM2 来托管 WebDAV 服务。它允许您一键获得 WebDAV 文件共享服务【免费】。
 
-![serv00一键部署免费webdav私人网盘]([https://raw.githubusercontent.com/aigem/CFr2-webdav/main/%E5%85%8D%E8%B4%B9%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2Cloudflare%20R2%20WebDAV%E6%9C%8D%E5%8A%A1%EF%BC%8C%E8%B6%85%E7%AE%80%E5%8D%95%E6%8B%A5%E6%9C%89%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E4%BA%BA%E7%BD%91%E7%9B%98-%E5%B0%81%E9%9D%A2.jpg)
-
-
+![serv00一键部署免费webdav私人网盘](https://raw.githubusercontent.com/aigem/serv00-webdav-go/main/%E3%80%90%E5%85%8D%E8%B4%B9%E7%BD%91%E7%9B%98%E6%96%B0%E9%80%89%E6%8B%A9%E3%80%91%E5%8D%81%E5%B9%B4%E5%85%8D%E8%B4%B9%E7%A9%BA%E9%97%B4%EF%BC%8C%E4%B8%80%E9%94%AEWebDAV%EF%BC%8C%E5%9B%BD%E5%86%85%E7%9B%B4%E8%BF%9E%EF%BC%81serv00%E6%B3%A8%E5%86%8C%E7%AE%80%E5%8D%95%2C%E4%B8%8D%E9%99%90%E6%B5%81%E9%87%8F-%E5%B0%81%E9%9D%A2.jpg)
 ## 特性
 
 - 使用简单的脚本自动安装 WebDAV-go
